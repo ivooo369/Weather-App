@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+}
+
+body {
+  background: url("./imgs/background-day-image.jpg");
+  height: 100vh;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+button {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+}
+
+header {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.title {
+  background-color: #00000080;
+  color: #ffffff;
+  width: 25rem;
+  margin: auto;
+  border-radius: 10px;
+  padding: 0.3rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.no-location-found-text {
+  display: none;
+  align-items: center;
+  background-color: #ff0000;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.search-input {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.search-input:focus {
+  border: none;
+  outline: none;
+}
+
+.search-button {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #007cb6;
+  transition: 0.3s ease-in-out;
+}
+
+.search-button:hover {
+  background-color: #006c9e;
+}
+
+.search-location-container {
+  display: flex;
+}
+
+.retrieved-location {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.retrieved-current-time {
+  white-space: pre-line;
+  font-size: 1.5rem;
+}
+
+.retrieved-data-margin {
+  margin-left: 0.5rem;
+  font-weight: 100;
+}
+
+.retrieved-temperature-container {
+  font-weight: 100;
+}
+
+.location-and-time-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 0.5rem;
+  background-color: #ffffff8a;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.full-data-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  background-color: #ffffff8a;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.forecast-container-title {
+  position: absolute;
+  margin: auto;
+  right: 0;
+  left: 0;
+  width: 50%;
+  text-align: center;
+}
+
+.hourly-forecast-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow: auto;
+  width: 50rem;
+  background-color: #ffffff8a;
+  border-radius: 10px;
+  padding: 1rem 1rem 0 1rem;
+}
+
+.daily-forecast-container {
+  gap: 1.5rem;
+  overflow: auto;
+  width: 50rem;
+  background-color: #ffffff8a;
+  border-radius: 10px;
+  padding: 1rem 1rem 0 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.hourly-forecast-elements-container,
+.daily-forecast-elements-container {
+  display: flex;
+}
+
+.daily-forecast-elements-container {
+  justify-content: center;
+  gap: 3rem;
+}
+
+.hourly-forecast-element,
+.daily-forecast-element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 10rem;
+  font-size: 1.2rem;
+  margin-top: 4rem;
+}
+
+.daily-forecast-element strong {
+  margin-bottom: 0.5rem;
+}
+
+.temperature-data {
+  display: flex;
+  align-items: center;
+}
+
+.data-container {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.data-container-retrieved-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.retrieved-temperature-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.data-icons {
+  width: 2.5rem;
+  margin-right: 0.5rem;
+}
+
+.weather-icons {
+  width: 3.5rem;
+}
+
+.switch-temp-metrics-button {
+  position: fixed;
+  background-color: #000000;
+  padding: 0.5rem;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+  height: 2.5rem;
+}
+
+.retrieved-uv-index {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+.uv-index-green {
+  background-color: #008000;
+  color: white;
+}
+
+.uv-index-yellow {
+  background-color: #ffff00;
+  color: black;
+}
+
+.uv-index-orange {
+  background-color: #ffa500;
+  color: black;
+}
+
+.uv-index-red {
+  background-color: #ff0000;
+  color: white;
+}
+
+.uv-index-purple {
+  background-color: #800080;
+  color: white;
+}
