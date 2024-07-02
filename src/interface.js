@@ -157,7 +157,6 @@ function displayHourlyForecast(hourlyData, timeZone) {
   const currentDate = new Date(currentTime);
   const next24Hours = [];
 
-  // Add the current hour to the forecast
   let startHourIndex = hourlyData.findIndex((hourData) => {
     const hourDate = new Date(hourData.time);
     const hourInTimeZone = new Date(
@@ -167,7 +166,6 @@ function displayHourlyForecast(hourlyData, timeZone) {
   });
 
   if (startHourIndex === -1) {
-    // If the current hour is not found, start from the next hour
     startHourIndex = hourlyData.findIndex((hourData) => {
       const hourDate = new Date(hourData.time);
       const hourInTimeZone = new Date(
