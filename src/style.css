@@ -115,11 +115,11 @@ header {
 
 .retrieved-data-margin {
   margin-left: 0.5rem;
-  font-weight: 100;
+  font-weight: 500;
 }
 
 .retrieved-temperature-container {
-  font-weight: 100;
+  font-weight: 500;
 }
 
 .location-and-time-container {

@@ -308,12 +308,6 @@ export function updateDataDisplay() {
       ? `${weatherData.currentHourlyTemperatureC} °C`
       : `${weatherData.currentHourlyTemperatureF} °F`;
   }
-
-  if (weatherData.isDay === 1) {
-    body.style.background = `url(${BackgroundDayImage})`;
-  } else {
-    body.style.background = `url(${BackgroundNightImage})`;
-  }
 }
 
 function updateUvIndex(uvIndex) {
