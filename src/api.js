@@ -1,7 +1,12 @@
 import { formatDate, updateDataDisplay } from "./interface";
+import BackgroundDayImage from "./images/background-day-image.jpg";
+import BackgroundNightImage from "./images/background-night-image.jpg";
 
+const body = document.querySelector("body");
+const content = document.querySelector(".content");
 const noLocationFoundText = document.querySelector(".no-location-found-text");
 const weatherIcon = document.querySelector(".weather-icons");
+const loadingSpinner = document.querySelector(".loading-spinner");
 
 export let weatherData = {};
 
@@ -26,6 +31,10 @@ const windDirectionMapping = {
 
 export async function retrieveData(location) {
   try {
+    loadingSpinner.style.display = "block";
+    body.style.background = "white";
+    content.style.display = "none";
+
     const timestamp = new Date().getTime();
     const response = await fetch(
       `https://api.weatherapi.com/v1/forecast.json?key=a59915d7fc264ed480f195910242306&q=${location}&timestamp=${timestamp}&days=3`,
@@ -149,6 +158,15 @@ export async function retrieveData(location) {
     }
   } catch (error) {
     console.error("Error fetching data:", error);
+  } finally {
+    if (weatherData.isDay === 1) {
+      body.style.background = `url(${BackgroundDayImage})`;
+    } else {
+      body.style.background = `url(${BackgroundNightImage})`;
+    }
+
+    content.style.display = "flex";
+    loadingSpinner.style.display = "none";
   }
 }
 
